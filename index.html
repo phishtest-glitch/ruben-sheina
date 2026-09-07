@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mariage de Avigael & Yoni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --or-luxe: #A08954; 
+            --blanc-creme: #FFFEFA;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body, html {
+            height: 100%; width: 100%;
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #1a1a1a; 
+            overflow: hidden; 
+        }
+
+        #global-page-content {
+            position: relative;
+            width: 100%; height: 100%;
+            background-color: var(--blanc-creme);
+            transition: transform 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transform-origin: left center;
+        }
+
+        .page-turn-active { transform: rotateY(-130deg); }
+
+       .border-overlay {
+    position: absolute;
+    inset: 5px; 
+    background-image: url('cadre.jpeg');
+    background-position: center;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    z-index: 1; /* Réduit ici */
+    pointer-events: none;
+}
+
+.card-wrapper {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%; 
+    max-width: 350px; 
+    text-align: center;
+    z-index: 10; /* Augmenté ici */
+}
+        .photo-container {
+            width: 90px;
+            margin: 0 auto 10px auto;
+            filter: drop-shadow(0 5px 10px rgba(160, 137, 84, 0.2));
+        }
+
+        .photo-container img {
+            width: 100%; height: auto;
+            display: block;
+        }
+
+        h1 {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 2.2rem; 
+            color: var(--or-luxe);
+            margin-bottom: 15px;
+        }
+
+        .separator {
+            width: 50px; height: 1px;
+            background-color: var(--or-luxe);
+            margin: 0 auto 25px auto;
+        }
+
+        .countdown {
+            display: flex; 
+            justify-content: center;
+            gap: 15px; 
+            margin-bottom: 30px; 
+            color: var(--or-luxe);
+        }
+        .count-box { display: flex; flex-direction: column; align-items: center; }
+        .count-num { font-size: 1.1rem; font-weight: 600; display: block; } 
+        .count-label { font-size: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* BOUTON RÉDUIT */
+        .btn {
+            display: inline-block;
+            background-color: var(--or-luxe);
+            color: #fff; 
+            text-decoration: none;
+            padding: 8px 20px; /* Padding réduit */
+            font-size: 0.55rem; /* Police plus petite */
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            border: none; 
+            transition: 0.3s;
+        }
+        .btn:hover { 
+            background-color: #8a7647; 
+            color: #fff; 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="global-page-content">
+        <div class="border-overlay"></div>
+        
+        <div class="card-wrapper">
+            <div class="photo-container">
+                <img src="logo777.png" alt="Avigael et Yoni">
+            </div>
+            
+            <h1>Avigael & Yoni</h1>
+            <div class="separator"></div>
+            
+            <div class="countdown">
+                <div class="count-box"><span class="count-num" id="d">00</span><span class="count-label">Jours</span></div>
+                <div class="count-box"><span class="count-num" id="h">00</span><span class="count-label">Hrs</span></div>
+                <div class="count-box"><span class="count-num" id="m">00</span><span class="count-label">Min</span></div>
+                <div class="count-box"><span class="count-num" id="s">00</span><span class="count-label">Sec</span></div>
+            </div>
+
+            <a href="invitation.html" class="btn" id="open-btn">Voir l'invitation</a>
+        </div>
+    </div>
+
+    <script>
+        const targetDate = new Date(2026, 6, 30, 17, 30, 0).getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+            if (diff > 0) {
+                document.getElementById("d").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+                document.getElementById("h").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                document.getElementById("m").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                document.getElementById("s").innerText = Math.floor((diff % (1000 * 60)) / 1000);
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        document.getElementById('open-btn').addEventListener('click', function(e) {
+            e.preventDefault(); 
+            document.getElementById('global-page-content').classList.add('page-turn-active');
+            setTimeout(() => { window.location.href = this.getAttribute('href'); }, 1000);
+        });
+    </script>
+</body>
+</html>
