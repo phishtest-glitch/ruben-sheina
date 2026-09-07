@@ -1,155 +1,470 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mariage de Avigael & Yoni</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sheina &amp; Ruben — Fiançailles · 27 décembre 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Alex+Brush&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink-deep:#2A1E12;
+    --bronze:#6E4F28;
+    --bronze-deep:#4A331B;
+    --cream:#FBF3E4;
+    --cream-2:#F4E9D3;
+    --gold:#D8B36C;
+    --gold-soft:#E9CE97;
+    --gold-deep:#8C6A3C;
+    --gold-dark:#6E5029;
+    --ink:#332619;
+    --ink-soft:#6B5940;
+    --line: rgba(140,106,60,.4);
+    --line-soft: rgba(140,106,60,.22);
+    --font-display:'Cormorant Garamond', Georgia, serif;
+    --font-script:'Alex Brush', cursive;
+    --font-body:'Jost', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: var(--font-body);
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; text-decoration:none; }
+  button{ font-family:inherit; cursor:pointer; }
+  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
 
-    <style>
-        :root {
-            --or-luxe: #A08954; 
-            --blanc-creme: #FFFEFA;
-        }
+  /* ================= COVER ================= */
+  #cover{
+    position:relative;
+    min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    background: radial-gradient(120% 100% at 50% 0%, var(--bronze) 0%, var(--bronze-deep) 62%, var(--ink-deep) 100%);
+    padding: 8vh 5vw;
+    text-align:center;
+    overflow:hidden;
+  }
+  #cover::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72'><path d='M36 4 L68 36 L36 68 L4 36 Z' fill='none' stroke='%23E9CE97' stroke-width='1' opacity='0.14'/><circle cx='36' cy='36' r='2.4' fill='%23E9CE97' opacity='0.14'/></svg>");
+    background-repeat:repeat;
+    pointer-events:none;
+  }
+  .cover-inner{ position:relative; z-index:2; animation: reveal 1.2s ease both; }
+  @keyframes reveal{ from{ opacity:0; transform:translateY(16px);} to{ opacity:1; transform:translateY(0);} }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  .arch{
+    position:relative;
+    width:min(440px, 88vw);
+    padding: 12% 9% 9%;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    border: 1.5px solid rgba(233,206,151,.85);
+    border-radius: 50% 50% 10px 10px / 30% 30% 10px 10px;
+    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+  }
+  .arch::before{
+    content:"";
+    position:absolute; inset:9px;
+    border:1px solid rgba(233,206,151,.4);
+    border-radius: 50% 50% 8px 8px / 30% 30% 8px 8px;
+    pointer-events:none;
+  }
 
-        body, html {
-            height: 100%; width: 100%;
-            font-family: 'Cormorant Garamond', serif;
-            background-color: #1a1a1a; 
-            overflow: hidden; 
-        }
+  .cover-monogram{ width:76px; height:auto; margin-bottom:16px; }
+  .cover-eyebrow{
+    font-family: var(--font-display); font-style:italic; font-size:15px;
+    letter-spacing:.04em; color: var(--gold-soft); margin-bottom:8px;
+  }
+  .cover-title{
+    font-family: var(--font-display); font-weight:500;
+    font-size: clamp(46px, 11vw, 70px);
+    color: var(--gold-soft); line-height:1.02;
+  }
+  .cover-names{
+    font-family: var(--font-script);
+    font-size: clamp(30px, 8vw, 42px);
+    color:#fff; margin-top:14px; line-height:1.25;
+  }
+  .cover-names .amp{ color: var(--gold); font-family: var(--font-display); font-style:italic; padding:0 .08em; }
+  .cover-divider{ width:60px; height:1px; background: var(--gold); margin:20px auto; opacity:.75; }
+  .cover-date{
+    font-family: var(--font-body); font-weight:500; letter-spacing:.18em;
+    font-size:13px; color: var(--cream);
+  }
+  .cover-cta{
+    margin-top:28px; display:inline-block;
+    padding: 14px 36px;
+    border-radius:999px;
+    background: linear-gradient(120deg, var(--gold-dark), var(--gold));
+    color:#2A1E12; font-weight:600; letter-spacing:.06em; font-size:14px;
+    box-shadow: 0 10px 28px rgba(0,0,0,.35);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .cover-cta:hover{ transform: translateY(-2px); box-shadow: 0 14px 32px rgba(0,0,0,.4); }
+  .scroll-hint{
+    position:absolute; bottom:22px; left:50%; transform:translateX(-50%);
+    color: var(--gold-soft); opacity:.7; font-size:22px; animation: bob 2.2s ease-in-out infinite;
+  }
+  @keyframes bob{ 0%,100%{ transform:translate(-50%,0);} 50%{ transform:translate(-50%,6px);} }
 
-        #global-page-content {
-            position: relative;
-            width: 100%; height: 100%;
-            background-color: var(--blanc-creme);
-            transition: transform 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-            transform-origin: left center;
-        }
+  /* ================= content shell ================= */
+  .content{ max-width: 640px; margin:0 auto; padding: 0 clamp(24px, 6vw, 40px); }
 
-        .page-turn-active { transform: rotateY(-130deg); }
+  /* ================= countdown strip ================= */
+  .countdown-wrap{
+    padding: 54px 6vw 40px; text-align:center; background: var(--cream-2);
+  }
+  .countdown-names{ font-family: var(--font-script); font-size: clamp(30px, 7vw, 40px); color: var(--gold-dark); }
+  .countdown-sub{ font-family: var(--font-display); font-style:italic; color: var(--ink-soft); margin-top:2px; }
+  .countdown{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:26px; }
+  .cd-box{ width:78px; padding:14px 0 10px; background: var(--cream); border:1px solid var(--gold); border-radius:10px; }
+  .cd-num{ font-family: var(--font-display); font-weight:700; font-size:28px; color: var(--gold-dark); }
+  .cd-label{ font-size:10px; letter-spacing:.12em; color: var(--ink-soft); margin-top:2px; }
 
-       .border-overlay {
-    position: absolute;
-    inset: 5px; 
-    background-image: url('cadre.jpeg');
-    background-position: center;
-    background-size: contain; 
-    background-repeat: no-repeat;
-    z-index: 1; /* Réduit ici */
-    pointer-events: none;
-}
+  /* ================= section headers ================= */
+  .section-head{ text-align:center; padding-top:50px; }
+  .section-eyebrow{ font-family: var(--font-display); font-style:italic; font-size:15px; color: var(--ink-soft); }
+  .section-title{ font-family: var(--font-display); font-size: clamp(30px,6vw,40px); color: var(--gold-dark); font-weight:600; margin-top:4px; }
 
-.card-wrapper {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 85%; 
-    max-width: 350px; 
-    text-align: center;
-    z-index: 10; /* Augmenté ici */
-}
-        .photo-container {
-            width: 90px;
-            margin: 0 auto 10px auto;
-            filter: drop-shadow(0 5px 10px rgba(160, 137, 84, 0.2));
-        }
+  /* ================= couple names ================= */
+  .couple{
+    display:grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
+    align-items:center; gap: 8px 16px; padding: 30px 0 8px;
+  }
+  .person{ text-align:center; min-width:0; }
+  .person .first{ font-family: var(--font-script); color: var(--ink); display:block; margin-bottom:4px; font-size: clamp(24px, 6vw, 40px); line-height:1.15; }
+  .person .last{ font-family: var(--font-display); letter-spacing:.03em; color: var(--gold-dark); font-weight:500; font-size: clamp(14px, 3vw, 21px); }
+  .amp{ font-family: var(--font-display); font-style:italic; font-size: clamp(32px, 8vw, 50px); color: var(--gold-deep); justify-self:center; }
 
-        .photo-container img {
-            width: 100%; height: auto;
-            display: block;
-        }
+  .invite-line{ text-align:center; font-size:15px; font-style:italic; font-family: var(--font-display); color:var(--ink-soft); padding: 4px 0 8px; }
 
-        h1 {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 2.2rem; 
-            color: var(--or-luxe);
-            margin-bottom: 15px;
-        }
+  /* ================= programme timeline ================= */
+  .timeline{ position:relative; padding: 30px 0 10px; }
+  .timeline::before{ content:""; position:absolute; left:27px; top:6px; bottom:26px; width:1px; background: var(--gold); opacity:.55; }
+  .t-item{ position:relative; padding-left:68px; margin-bottom:30px; }
+  .t-badge{
+    position:absolute; left:0; top:0; width:54px; height:54px; border-radius:50%;
+    background: var(--cream); border:1.5px solid var(--gold);
+    display:flex; align-items:center; justify-content:center; color: var(--gold-deep);
+  }
+  .t-badge svg{ width:24px; height:24px; }
+  .t-title{ font-family: var(--font-display); font-weight:600; font-size:20px; color: var(--ink); }
+  .t-time{ font-family: var(--font-display); color: var(--gold-dark); font-size:17px; font-weight:600; margin-top:2px; }
 
-        .separator {
-            width: 50px; height: 1px;
-            background-color: var(--or-luxe);
-            margin: 0 auto 25px auto;
-        }
+  .cal-btn{
+    margin-top:22px; display:inline-flex; align-items:center; gap:8px;
+    padding: 11px 22px; border:1.5px solid var(--gold-deep); color: var(--gold-dark);
+    border-radius:999px; font-size:13px; font-weight:600; letter-spacing:.03em;
+    background:transparent; transition: background .2s ease, color .2s ease;
+  }
+  .cal-btn:hover{ background: var(--gold-deep); color:#fff; }
 
-        .countdown {
-            display: flex; 
-            justify-content: center;
-            gap: 15px; 
-            margin-bottom: 30px; 
-            color: var(--or-luxe);
-        }
-        .count-box { display: flex; flex-direction: column; align-items: center; }
-        .count-num { font-size: 1.1rem; font-weight: 600; display: block; } 
-        .count-label { font-size: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+  .location{
+    text-align:center; font-size:15px; color:var(--ink-soft); margin: 26px auto 0; max-width:420px;
+    display:flex; align-items:flex-start; justify-content:center; gap:8px;
+  }
+  .location svg{ width:16px; height:16px; margin-top:4px; flex-shrink:0; color: var(--gold-deep); }
 
-        /* BOUTON RÉDUIT */
-        .btn {
-            display: inline-block;
-            background-color: var(--or-luxe);
-            color: #fff; 
-            text-decoration: none;
-            padding: 8px 20px; /* Padding réduit */
-            font-size: 0.55rem; /* Police plus petite */
-            text-transform: uppercase; 
-            letter-spacing: 2px;
-            border: none; 
-            transition: 0.3s;
-        }
-        .btn:hover { 
-            background-color: #8a7647; 
-            color: #fff; 
-        }
-    </style>
+  .hope{ text-align:center; font-style:italic; font-family: var(--font-display); color: var(--gold-dark); font-size:17px; padding: 26px 0 4px; }
+
+  /* ================= dividers & quote ================= */
+  .divider{ display:flex; align-items:center; justify-content:center; gap:14px; padding: 44px 0; }
+  .divider .line{ flex:1; height:1px; background: var(--line); }
+  .divider svg{ width:18px; height:18px; color: var(--gold-deep); flex-shrink:0; }
+
+  .quote{ text-align:center; padding-bottom:10px; }
+  .quote p{ font-family: var(--font-display); font-style:italic; font-size: clamp(18px, 3.6vw, 23px); color: var(--ink-soft); line-height:1.5; }
+  .quote .attrib{ margin-top:12px; font-family: var(--font-script); font-size:24px; color: var(--gold-dark); }
+
+  /* ================= RSVP ================= */
+  section.rsvp{ padding: 20px 0 60px; }
+  .rsvp-box{
+    background: var(--cream-2); border:1px solid rgba(216,179,108,.5); border-radius:18px;
+    padding: 38px clamp(20px,5vw,44px);
+  }
+  .deadline{ text-align:center; font-size:14px; color: var(--ink-soft); margin-bottom:26px; }
+  form.rsvp{ display:grid; gap:22px; }
+  .field label{ display:block; font-size:12.5px; letter-spacing:.06em; color: var(--ink-soft); font-weight:500; margin-bottom:8px; }
+  .field input[type=text], .field input[type=tel], .field input[type=number]{
+    width:100%; padding: 10px 2px; border:none; border-bottom:1px solid var(--gold-deep);
+    background:transparent; font-family: var(--font-body); font-size:16px; color:var(--ink); outline:none;
+  }
+  .field input:focus{ border-bottom-width:2px; }
+  .radio-row{ display:flex; gap:26px; }
+  .radio-opt{ display:flex; align-items:center; gap:8px; font-size:15px; }
+  .radio-opt input{ accent-color: var(--gold-deep); width:17px; height:17px; }
+
+  .guests-field{ display:none; }
+  .guests-field.show{ display:block; }
+
+  .submit-btn{
+    width:100%; padding:15px; margin-top:4px;
+    background: linear-gradient(120deg, var(--gold-dark), var(--gold-deep));
+    color:#fff; border:none; border-radius:999px; font-weight:600; letter-spacing:.08em; font-size:14px;
+    box-shadow: 0 8px 20px rgba(110,80,41,.35);
+    transition: transform .15s ease, box-shadow .2s ease;
+  }
+  .submit-btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(110,80,41,.45); }
+
+  .confirm{ display:none; text-align:center; padding: 10px 6px 0; }
+  .confirm.show{ display:block; }
+  .confirm h3{ font-family: var(--font-display); color: var(--gold-dark); font-size:26px; margin: 4px 0 10px; }
+  .confirm p{ color: var(--ink-soft); font-size:15px; }
+
+  /* ================= footer ================= */
+  footer{ text-align:center; padding: 10px 20px 56px; color: var(--ink-soft); font-size:13.5px; }
+  footer .logo-mark{ width:92px; margin-bottom:12px; }
+  footer .names{ font-family: var(--font-script); font-size:26px; color: var(--gold-dark); display:block; margin-bottom:6px; }
+
+  ::selection{ background: var(--gold); color:#fff; }
+  :focus-visible{ outline: 2px solid var(--gold-deep); outline-offset: 2px; }
+</style>
 </head>
 <body>
 
-    <div id="global-page-content">
-        <div class="border-overlay"></div>
-        
-        <div class="card-wrapper">
-            <div class="photo-container">
-                <img src="logo777.png" alt="Avigael et Yoni">
-            </div>
-            
-            <h1>Avigael & Yoni</h1>
-            <div class="separator"></div>
-            
-            <div class="countdown">
-                <div class="count-box"><span class="count-num" id="d">00</span><span class="count-label">Jours</span></div>
-                <div class="count-box"><span class="count-num" id="h">00</span><span class="count-label">Hrs</span></div>
-                <div class="count-box"><span class="count-num" id="m">00</span><span class="count-label">Min</span></div>
-                <div class="count-box"><span class="count-num" id="s">00</span><span class="count-label">Sec</span></div>
-            </div>
+<!-- ============ COVER ============ -->
+<section id="cover">
+  <div class="cover-inner">
+    <div class="arch">
+      <svg class="cover-monogram" viewBox="-4 8 204 132">
+        <path d="M22,58 C6,52 5,32 21,25 C33,20 43,27 41,38 C39,47 29,49 26,42" fill="none" stroke="#E9CE97" stroke-width="2.1" stroke-linecap="round" opacity="0.9"/>
+        <path d="M178,92 C195,97 197,118 180,124 C167,129 158,122 160,111 C162,102 172,100 175,107" fill="none" stroke="#E9CE97" stroke-width="2.1" stroke-linecap="round" opacity="0.9"/>
+        <path d="M14,132 C64,150 138,150 187,128" fill="none" stroke="#E9CE97" stroke-width="1.3" stroke-linecap="round" opacity="0.75"/>
+        <text x="8" y="120" font-family="'Alex Brush', cursive" font-size="126" fill="#E9CE97">S</text>
+        <text x="86" y="120" font-family="'Alex Brush', cursive" font-size="126" fill="#E9CE97">R</text>
+        <path d="M100,66 C100,60 108,60 108,66 C108,60 116,60 116,66 C116,73 108,80 108,80 C108,80 100,73 100,66 Z" fill="#E9CE97"/>
+      </svg>
+      <p class="cover-eyebrow">Vous êtes chaleureusement invités à célébrer le</p>
+      <h1 class="cover-title">Fiançailles</h1>
+      <p class="cover-names">Sheina Braha <span class="amp">&amp;</span> Ruben Avraham</p>
+      <div class="cover-divider"></div>
+      <div class="cover-date">27 DÉCEMBRE 2026</div>
+      <a href="#details" class="cover-cta">Découvrir l'invitation</a>
+    </div>
+  </div>
+  <div class="scroll-hint">⌄</div>
+</section>
 
-            <a href="invitation.html" class="btn" id="open-btn">Voir l'invitation</a>
-        </div>
+<!-- ============ COUNTDOWN ============ -->
+<div class="countdown-wrap">
+  <div class="countdown-names">Sheina &amp; Ruben</div>
+  <div class="countdown-sub">Le compte à rebours a commencé</div>
+  <div class="countdown">
+    <div class="cd-box"><div class="cd-num" id="cd-days">00</div><div class="cd-label">JOURS</div></div>
+    <div class="cd-box"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">HEURES</div></div>
+    <div class="cd-box"><div class="cd-num" id="cd-mins">00</div><div class="cd-label">MIN</div></div>
+    <div class="cd-box"><div class="cd-num" id="cd-secs">00</div><div class="cd-label">SEC</div></div>
+  </div>
+</div>
+
+<div id="details" class="content">
+
+  <div class="couple">
+    <div class="person">
+      <span class="first">Sheina Braha</span>
+      <span class="last">Abecassis</span>
+    </div>
+    <div class="amp">&amp;</div>
+    <div class="person">
+      <span class="first">Ruben Avraham</span>
+      <span class="last">Isaac Mouly</span>
+    </div>
+  </div>
+  <p class="invite-line">Nous serions honorés de votre présence</p>
+
+  <div class="section-head">
+    <p class="section-eyebrow">Dimanche</p>
+    <h2 class="section-title">27 Décembre 2026</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="t-item">
+      <div class="t-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="15" r="6"/><path d="M9 8l3-5 3 5"/><path d="M9.5 15a2.5 2.5 0 0 1 5 0"/></svg>
+      </div>
+      <div class="t-title">Accueil des invités</div>
+      <div class="t-time">19h00</div>
+    </div>
+    <div class="t-item">
+      <div class="t-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 3v6l-2 8a2 2 0 0 0 2 3h0a2 2 0 0 0 2-3l-2-8V3"/><path d="M16 3v6l2 8a2 2 0 0 1-2 3h0a2 2 0 0 1-2-3l2-8V3"/><path d="M6 3h4M14 3h4"/></svg>
+      </div>
+      <div class="t-title">Cérémonie des fiançailles</div>
+      <div class="t-time">20h00</div>
+    </div>
+    <div class="t-item">
+      <div class="t-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="9" cy="12" r="7"/><path d="M17 5v14M20 5v6a3 3 0 0 1-3 3"/></svg>
+      </div>
+      <div class="t-title">Dîner &amp; soirée</div>
+      <div class="t-time">21h00</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <button class="cal-btn" onclick="addToCalendar()">📅 Ajouter à mon calendrier</button>
+  </div>
+
+  <p class="location">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
+    <span>Le lieu exact vous sera communiqué ultérieurement.</span>
+  </p>
+
+  <p class="hope">Nous avons hâte de partager ce moment unique avec vous !</p>
+
+  <div class="divider">
+    <span class="line"></span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s-7-4.5-7-10a5 5 0 0 1 10 0 5 5 0 0 1 10 0c0 5.5-7 10-7 10s-3-1.5-3-1.5"/></svg>
+    <span class="line"></span>
+  </div>
+
+  <div class="quote">
+    <p>« Deux âmes, une promesse — le premier chapitre d'une longue et belle histoire. »</p>
+    <div class="attrib">Sheina &amp; Ruben</div>
+  </div>
+
+  <section class="rsvp" id="rsvp">
+    <div class="section-head">
+      <p class="section-eyebrow">Merci de bien vouloir</p>
+      <h2 class="section-title">Vous inscrire</h2>
     </div>
 
-    <script>
-        const targetDate = new Date(2026, 6, 30, 17, 30, 0).getTime();
+    <div class="rsvp-box" style="margin-top:26px;">
+      <p class="deadline">Merci de confirmer votre présence avant le <strong>30 novembre 2026</strong>.</p>
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const diff = targetDate - now;
-            if (diff > 0) {
-                document.getElementById("d").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-                document.getElementById("h").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                document.getElementById("m").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                document.getElementById("s").innerText = Math.floor((diff % (1000 * 60)) / 1000);
-            }
-        }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+      <form class="rsvp" id="rsvpForm">
+        <div class="field">
+          <label for="name">Nom et prénom</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
 
-        document.getElementById('open-btn').addEventListener('click', function(e) {
-            e.preventDefault(); 
-            document.getElementById('global-page-content').classList.add('page-turn-active');
-            setTimeout(() => { window.location.href = this.getAttribute('href'); }, 1000);
-        });
-    </script>
+        <div class="field">
+          <label for="phone">Téléphone</label>
+          <input type="tel" id="phone" name="phone" required autocomplete="tel">
+        </div>
+
+        <div class="field">
+          <label>Serez-vous des nôtres ?</label>
+          <div class="radio-row">
+            <label class="radio-opt"><input type="radio" name="attending" value="oui" checked> Présent</label>
+            <label class="radio-opt"><input type="radio" name="attending" value="non"> Absent</label>
+          </div>
+        </div>
+
+        <div class="field guests-field show" id="guestsField">
+          <label for="guests">Nombre de personnes</label>
+          <input type="number" id="guests" name="guests" min="1" max="12" value="1">
+        </div>
+
+        <button type="submit" class="submit-btn">Confirmer ma venue</button>
+      </form>
+
+      <div class="confirm" id="confirmMsg">
+        <h3 id="confirmTitle">Merci infiniment !</h3>
+        <p id="confirmText">Votre réponse a bien été enregistrée. Nous avons hâte de célébrer ce moment avec vous.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <svg class="logo-mark" viewBox="-4 8 204 132">
+    <path d="M22,58 C6,52 5,32 21,25 C33,20 43,27 41,38 C39,47 29,49 26,42" fill="none" stroke="#8A6A3E" stroke-width="2.1" stroke-linecap="round" opacity="0.9"/>
+    <path d="M178,92 C195,97 197,118 180,124 C167,129 158,122 160,111 C162,102 172,100 175,107" fill="none" stroke="#8A6A3E" stroke-width="2.1" stroke-linecap="round" opacity="0.9"/>
+    <path d="M14,132 C64,150 138,150 187,128" fill="none" stroke="#8A6A3E" stroke-width="1.3" stroke-linecap="round" opacity="0.75"/>
+    <text x="8" y="120" font-family="'Alex Brush', cursive" font-size="126" fill="#8A6A3E">S</text>
+    <text x="86" y="120" font-family="'Alex Brush', cursive" font-size="126" fill="#8A6A3E">R</text>
+    <path d="M100,66 C100,60 108,60 108,66 C108,60 116,60 116,66 C116,73 108,80 108,80 C108,80 100,73 100,66 Z" fill="#8A6A3E"/>
+  </svg>
+  <span class="names">Sheina &amp; Ruben</span>
+  27 décembre 2026 · avec toute notre gratitude
+</footer>
+
+<script>
+  // guests field toggle
+  const radios = document.querySelectorAll('input[name="attending"]');
+  const guestsField = document.getElementById('guestsField');
+  radios.forEach(r => {
+    r.addEventListener('change', () => {
+      if (r.value === 'oui' && r.checked) guestsField.classList.add('show');
+      if (r.value === 'non' && r.checked) guestsField.classList.remove('show');
+    });
+  });
+
+  // form submit
+  const form = document.getElementById('rsvpForm');
+  const confirmMsg = document.getElementById('confirmMsg');
+  const confirmTitle = document.getElementById('confirmTitle');
+  const confirmText = document.getElementById('confirmText');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const attending = document.querySelector('input[name="attending"]:checked').value;
+
+    if (attending === 'oui') {
+      confirmTitle.textContent = 'Merci infiniment, ' + (name.split(' ')[0] || '') + ' !';
+      confirmText.textContent = 'Votre présence a bien été confirmée. Nous avons hâte de célébrer ce moment unique avec vous le 27 décembre 2026.';
+    } else {
+      confirmTitle.textContent = 'Merci de nous avoir prévenus';
+      confirmText.textContent = 'Nous sommes tristes de ne pas vous compter parmi nous, mais nous penserons fort à vous ce jour-là.';
+    }
+
+    form.style.display = 'none';
+    confirmMsg.classList.add('show');
+  });
+
+  // countdown to 27 Dec 2026, 19:00 Paris time
+  const target = new Date('2026-12-27T19:00:00+01:00').getTime();
+  function updateCountdown(){
+    const now = new Date().getTime();
+    let diff = target - now;
+    if (diff < 0) diff = 0;
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff / (1000*60*60)) % 24);
+    const mins = Math.floor((diff / (1000*60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+    document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // add to calendar (.ics download)
+  function addToCalendar(){
+    const ics = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Sheina Ruben Fiancailles//FR',
+      'BEGIN:VEVENT',
+      'UID:' + Date.now() + '@sheina-ruben.fr',
+      'DTSTAMP:20261227T190000',
+      'DTSTART:20261227T190000',
+      'DTEND:20261228T000000',
+      'SUMMARY:Fiançailles de Sheina & Ruben',
+      'DESCRIPTION:Accueil 19h · Cérémonie 20h · Dîner 21h',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+    const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Fiancailles_Sheina_Ruben.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+</script>
+
 </body>
 </html>
