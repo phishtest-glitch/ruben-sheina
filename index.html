@@ -2,469 +2,245 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sheina &amp; Ruben — Fiançailles · 27 décembre 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Alex+Brush&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sheina &amp; Ruben — Fiançailles · 27 février 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink-deep:#2A1E12;
-    --bronze:#6E4F28;
-    --bronze-deep:#4A331B;
-    --cream:#FBF3E4;
-    --cream-2:#F4E9D3;
-    --gold:#D8B36C;
-    --gold-soft:#E9CE97;
-    --gold-deep:#8C6A3C;
-    --gold-dark:#6E5029;
-    --ink:#332619;
-    --ink-soft:#6B5940;
-    --line: rgba(140,106,60,.4);
-    --line-soft: rgba(140,106,60,.22);
-    --font-display:'Cormorant Garamond', Georgia, serif;
-    --font-script:'Alex Brush', cursive;
-    --font-body:'Jost', sans-serif;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family: var(--font-body);
-    color:var(--ink);
-    background:var(--cream);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{ color:inherit; text-decoration:none; }
-  button{ font-family:inherit; cursor:pointer; }
-  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+:root{--deep:#0B211E;--emerald:#14413A;--emerald2:#1F5E53;--blush:#FBEDE8;--blush2:#F5DDD4;--rose:#E7A99B;--rose-d:#B9695C;--champ:#F3D9B1;--ink:#1D2B28;--soft:#5F6F6A;
+--display:'Cormorant Garamond',Georgia,serif;--script:'Great Vibes',cursive;--body:'Jost',system-ui,sans-serif;
+--bg:var(--blush)}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
-  /* ================= COVER ================= */
-  #cover{
-    position:relative;
-    min-height:100vh;
-    display:flex; align-items:center; justify-content:center;
-    background: radial-gradient(120% 100% at 50% 0%, var(--bronze) 0%, var(--bronze-deep) 62%, var(--ink-deep) 100%);
-    padding: 8vh 5vw;
-    text-align:center;
-    overflow:hidden;
-  }
-  #cover::before{
-    content:"";
-    position:absolute; inset:0;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72'><path d='M36 4 L68 36 L36 68 L4 36 Z' fill='none' stroke='%23E9CE97' stroke-width='1' opacity='0.14'/><circle cx='36' cy='36' r='2.4' fill='%23E9CE97' opacity='0.14'/></svg>");
-    background-repeat:repeat;
-    pointer-events:none;
-  }
-  .cover-inner{ position:relative; z-index:2; animation: reveal 1.2s ease both; }
-  @keyframes reveal{ from{ opacity:0; transform:translateY(16px);} to{ opacity:1; transform:translateY(0);} }
+#cover{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8vh 5vw;overflow:hidden;
+background:radial-gradient(70% 55% at 20% 15%,rgba(231,169,155,.35),transparent 60%),radial-gradient(60% 50% at 85% 85%,rgba(31,94,83,.9),transparent 65%),linear-gradient(160deg,var(--emerald),var(--deep))}
+#fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(50px);opacity:.5;animation:float 9s ease-in-out infinite}
+.o1{width:260px;height:260px;background:var(--rose);top:-60px;left:-70px}
+.o2{width:300px;height:300px;background:var(--emerald2);bottom:-90px;right:-80px;animation-delay:-4s}
+@keyframes float{50%{transform:translate(20px,26px) scale(1.08)}}
+.cover-inner{position:relative;z-index:2;animation:rise 1.3s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.glass{width:min(440px,90vw);padding:44px 28px 40px;border:1px solid rgba(243,217,177,.45);border-radius:220px 220px 22px 22px;
+background:rgba(255,255,255,.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 30px 80px rgba(0,0,0,.4),inset 0 0 0 8px rgba(243,217,177,.06)}
+.logo{width:110px;height:110px;margin:0 auto 10px;display:block}
+.ring{animation:spin 30s linear infinite;transform-origin:60px 60px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.eyebrow{font-family:var(--display);font-style:italic;font-size:16px;color:var(--champ)}
+.big{font-family:var(--display);font-weight:400;font-size:clamp(46px,12vw,68px);letter-spacing:.04em;line-height:1.05;margin:6px 0;
+background:linear-gradient(90deg,#fff,var(--champ),var(--rose),#fff);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-250% 0}}
+.names{font-family:var(--script);font-size:clamp(40px,11vw,58px);color:#fff;line-height:1.1;margin-top:6px}
+.names i{font-family:var(--display);color:var(--rose);font-size:.6em;padding:0 .15em}
+.sep{width:70px;height:1px;background:var(--rose);margin:20px auto}
+.date{letter-spacing:.3em;font-size:13px;color:var(--blush);font-weight:500}
+.cta{margin-top:28px;display:inline-block;padding:14px 34px;border-radius:99px;background:linear-gradient(120deg,var(--rose),var(--champ));color:var(--deep);font-weight:600;letter-spacing:.06em;font-size:14px;box-shadow:0 10px 30px rgba(231,169,155,.4);transition:transform .2s}
+.cta:hover{transform:translateY(-3px) scale(1.03)}
 
-  .arch{
-    position:relative;
-    width:min(440px, 88vw);
-    padding: 12% 9% 9%;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    border: 1.5px solid rgba(233,206,151,.85);
-    border-radius: 50% 50% 10px 10px / 30% 30% 10px 10px;
-    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
-  }
-  .arch::before{
-    content:"";
-    position:absolute; inset:9px;
-    border:1px solid rgba(233,206,151,.4);
-    border-radius: 50% 50% 8px 8px / 30% 30% 8px 8px;
-    pointer-events:none;
-  }
+.cd-wrap{padding:56px 6vw 44px;text-align:center;background:var(--deep);color:var(--blush)}
+.cd-wrap h3{font-family:var(--script);font-weight:400;font-size:clamp(34px,8vw,46px);color:var(--rose)}
+.cd-wrap p{font-family:var(--display);font-style:italic;color:var(--champ)}
+.cd{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.cd div{width:76px;padding:14px 0 10px;border:1px solid rgba(231,169,155,.5);border-radius:14px;background:rgba(255,255,255,.05)}
+.cd b{display:block;font-family:var(--display);font-size:32px;font-weight:600;color:#fff}
+.cd span{font-size:10px;letter-spacing:.15em;color:var(--rose)}
 
-  .cover-monogram{ width:76px; height:auto; margin-bottom:16px; }
-  .cover-eyebrow{
-    font-family: var(--font-display); font-style:italic; font-size:15px;
-    letter-spacing:.04em; color: var(--gold-soft); margin-bottom:8px;
-  }
-  .cover-title{
-    font-family: var(--font-display); font-weight:500;
-    font-size: clamp(46px, 11vw, 70px);
-    color: var(--gold-soft); line-height:1.02;
-  }
-  .cover-names{
-    font-family: var(--font-script);
-    font-size: clamp(30px, 8vw, 42px);
-    color:#fff; margin-top:14px; line-height:1.25;
-  }
-  .cover-names .amp{ color: var(--gold); font-family: var(--font-display); font-style:italic; padding:0 .08em; }
-  .cover-divider{ width:60px; height:1px; background: var(--gold); margin:20px auto; opacity:.75; }
-  .cover-date{
-    font-family: var(--font-body); font-weight:500; letter-spacing:.18em;
-    font-size:13px; color: var(--cream);
-  }
-  .cover-cta{
-    margin-top:28px; display:inline-block;
-    padding: 14px 36px;
-    border-radius:999px;
-    background: linear-gradient(120deg, var(--gold-dark), var(--gold));
-    color:#2A1E12; font-weight:600; letter-spacing:.06em; font-size:14px;
-    box-shadow: 0 10px 28px rgba(0,0,0,.35);
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-  .cover-cta:hover{ transform: translateY(-2px); box-shadow: 0 14px 32px rgba(0,0,0,.4); }
-  .scroll-hint{
-    position:absolute; bottom:22px; left:50%; transform:translateX(-50%);
-    color: var(--gold-soft); opacity:.7; font-size:22px; animation: bob 2.2s ease-in-out infinite;
-  }
-  @keyframes bob{ 0%,100%{ transform:translate(-50%,0);} 50%{ transform:translate(-50%,6px);} }
-
-  /* ================= content shell ================= */
-  .content{ max-width: 640px; margin:0 auto; padding: 0 clamp(24px, 6vw, 40px); }
-
-  /* ================= countdown strip ================= */
-  .countdown-wrap{
-    padding: 54px 6vw 40px; text-align:center; background: var(--cream-2);
-  }
-  .countdown-names{ font-family: var(--font-script); font-size: clamp(30px, 7vw, 40px); color: var(--gold-dark); }
-  .countdown-sub{ font-family: var(--font-display); font-style:italic; color: var(--ink-soft); margin-top:2px; }
-  .countdown{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:26px; }
-  .cd-box{ width:78px; padding:14px 0 10px; background: var(--cream); border:1px solid var(--gold); border-radius:10px; }
-  .cd-num{ font-family: var(--font-display); font-weight:700; font-size:28px; color: var(--gold-dark); }
-  .cd-label{ font-size:10px; letter-spacing:.12em; color: var(--ink-soft); margin-top:2px; }
-
-  /* ================= section headers ================= */
-  .section-head{ text-align:center; padding-top:50px; }
-  .section-eyebrow{ font-family: var(--font-display); font-style:italic; font-size:15px; color: var(--ink-soft); }
-  .section-title{ font-family: var(--font-display); font-size: clamp(30px,6vw,40px); color: var(--gold-dark); font-weight:600; margin-top:4px; }
-
-  /* ================= couple names ================= */
-  .couple{
-    display:grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
-    align-items:center; gap: 8px 16px; padding: 30px 0 8px;
-  }
-  .person{ text-align:center; min-width:0; }
-  .person .first{ font-family: var(--font-script); color: var(--ink); display:block; margin-bottom:4px; font-size: clamp(24px, 6vw, 40px); line-height:1.15; }
-  .person .last{ font-family: var(--font-display); letter-spacing:.03em; color: var(--gold-dark); font-weight:500; font-size: clamp(14px, 3vw, 21px); }
-  .amp{ font-family: var(--font-display); font-style:italic; font-size: clamp(32px, 8vw, 50px); color: var(--gold-deep); justify-self:center; }
-
-  .invite-line{ text-align:center; font-size:15px; font-style:italic; font-family: var(--font-display); color:var(--ink-soft); padding: 4px 0 8px; }
-
-  /* ================= programme timeline ================= */
-  .timeline{ position:relative; padding: 30px 0 10px; }
-  .timeline::before{ content:""; position:absolute; left:27px; top:6px; bottom:26px; width:1px; background: var(--gold); opacity:.55; }
-  .t-item{ position:relative; padding-left:68px; margin-bottom:30px; }
-  .t-badge{
-    position:absolute; left:0; top:0; width:54px; height:54px; border-radius:50%;
-    background: var(--cream); border:1.5px solid var(--gold);
-    display:flex; align-items:center; justify-content:center; color: var(--gold-deep);
-  }
-  .t-badge svg{ width:24px; height:24px; }
-  .t-title{ font-family: var(--font-display); font-weight:600; font-size:20px; color: var(--ink); }
-  .t-time{ font-family: var(--font-display); color: var(--gold-dark); font-size:17px; font-weight:600; margin-top:2px; }
-
-  .cal-btn{
-    margin-top:22px; display:inline-flex; align-items:center; gap:8px;
-    padding: 11px 22px; border:1.5px solid var(--gold-deep); color: var(--gold-dark);
-    border-radius:999px; font-size:13px; font-weight:600; letter-spacing:.03em;
-    background:transparent; transition: background .2s ease, color .2s ease;
-  }
-  .cal-btn:hover{ background: var(--gold-deep); color:#fff; }
-
-  .location{
-    text-align:center; font-size:15px; color:var(--ink-soft); margin: 26px auto 0; max-width:420px;
-    display:flex; align-items:flex-start; justify-content:center; gap:8px;
-  }
-  .location svg{ width:16px; height:16px; margin-top:4px; flex-shrink:0; color: var(--gold-deep); }
-
-  .hope{ text-align:center; font-style:italic; font-family: var(--font-display); color: var(--gold-dark); font-size:17px; padding: 26px 0 4px; }
-
-  /* ================= dividers & quote ================= */
-  .divider{ display:flex; align-items:center; justify-content:center; gap:14px; padding: 44px 0; }
-  .divider .line{ flex:1; height:1px; background: var(--line); }
-  .divider svg{ width:18px; height:18px; color: var(--gold-deep); flex-shrink:0; }
-
-  .quote{ text-align:center; padding-bottom:10px; }
-  .quote p{ font-family: var(--font-display); font-style:italic; font-size: clamp(18px, 3.6vw, 23px); color: var(--ink-soft); line-height:1.5; }
-  .quote .attrib{ margin-top:12px; font-family: var(--font-script); font-size:24px; color: var(--gold-dark); }
-
-  /* ================= RSVP ================= */
-  section.rsvp{ padding: 20px 0 60px; }
-  .rsvp-box{
-    background: var(--cream-2); border:1px solid rgba(216,179,108,.5); border-radius:18px;
-    padding: 38px clamp(20px,5vw,44px);
-  }
-  .deadline{ text-align:center; font-size:14px; color: var(--ink-soft); margin-bottom:26px; }
-  form.rsvp{ display:grid; gap:22px; }
-  .field label{ display:block; font-size:12.5px; letter-spacing:.06em; color: var(--ink-soft); font-weight:500; margin-bottom:8px; }
-  .field input[type=text], .field input[type=tel], .field input[type=number]{
-    width:100%; padding: 10px 2px; border:none; border-bottom:1px solid var(--gold-deep);
-    background:transparent; font-family: var(--font-body); font-size:16px; color:var(--ink); outline:none;
-  }
-  .field input:focus{ border-bottom-width:2px; }
-  .radio-row{ display:flex; gap:26px; }
-  .radio-opt{ display:flex; align-items:center; gap:8px; font-size:15px; }
-  .radio-opt input{ accent-color: var(--gold-deep); width:17px; height:17px; }
-
-  .guests-field{ display:none; }
-  .guests-field.show{ display:block; }
-
-  .submit-btn{
-    width:100%; padding:15px; margin-top:4px;
-    background: linear-gradient(120deg, var(--gold-dark), var(--gold-deep));
-    color:#fff; border:none; border-radius:999px; font-weight:600; letter-spacing:.08em; font-size:14px;
-    box-shadow: 0 8px 20px rgba(110,80,41,.35);
-    transition: transform .15s ease, box-shadow .2s ease;
-  }
-  .submit-btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(110,80,41,.45); }
-
-  .confirm{ display:none; text-align:center; padding: 10px 6px 0; }
-  .confirm.show{ display:block; }
-  .confirm h3{ font-family: var(--font-display); color: var(--gold-dark); font-size:26px; margin: 4px 0 10px; }
-  .confirm p{ color: var(--ink-soft); font-size:15px; }
-
-  /* ================= footer ================= */
-  footer{ text-align:center; padding: 10px 20px 56px; color: var(--ink-soft); font-size:13.5px; }
-  footer .logo-mark{ width:92px; margin-bottom:12px; }
-  footer .names{ font-family: var(--font-script); font-size:26px; color: var(--gold-dark); display:block; margin-bottom:6px; }
-
-  ::selection{ background: var(--gold); color:#fff; }
-  :focus-visible{ outline: 2px solid var(--gold-deep); outline-offset: 2px; }
+.content{max-width:640px;margin:0 auto;padding:0 clamp(24px,6vw,40px)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+.head{text-align:center;padding-top:54px}
+.head p{font-family:var(--display);font-style:italic;color:var(--soft);font-size:16px}
+.head h2{font-family:var(--display);font-weight:600;font-size:clamp(32px,7vw,44px);color:var(--emerald)}
+.couple{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px 14px;padding:40px 0 6px;text-align:center}
+.couple .f{font-family:var(--script);font-size:clamp(38px,10vw,60px);color:var(--emerald);line-height:1.1;display:block}
+.couple .l{font-family:var(--display);letter-spacing:.06em;color:var(--rose-d);font-size:clamp(14px,3.4vw,19px);font-weight:600}
+.couple .a{font-family:var(--display);font-style:italic;font-size:clamp(34px,8vw,52px);color:var(--rose)}
+.line{text-align:center;font-family:var(--display);font-style:italic;color:var(--soft);padding:6px 0}
+.tl{position:relative;padding:34px 0 6px}
+.tl::before{content:"";position:absolute;left:27px;top:34px;bottom:30px;width:2px;background:linear-gradient(var(--rose),var(--emerald2))}
+.ti{position:relative;padding-left:72px;margin-bottom:32px}
+.tb{position:absolute;left:0;top:0;width:54px;height:54px;border-radius:50%;background:linear-gradient(140deg,var(--emerald),var(--emerald2));color:var(--champ);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:22px;box-shadow:0 8px 20px rgba(20,65,58,.3)}
+.tt{font-family:var(--display);font-weight:600;font-size:22px}
+.tm{color:var(--rose-d);font-family:var(--display);font-weight:600;font-size:18px}
+.cal{display:inline-block;margin-top:14px;padding:12px 24px;border:1.5px solid var(--emerald);color:var(--emerald);background:transparent;border-radius:99px;font-size:13px;font-weight:600;transition:.2s}
+.cal:hover{background:var(--emerald);color:#fff}
+.loc{text-align:center;margin-top:26px;color:var(--soft);font-size:15px}
+.hope{text-align:center;font-family:var(--display);font-style:italic;color:var(--emerald);font-size:19px;padding:24px 0}
+.quote{text-align:center;margin:30px 0;padding:36px 22px;border-radius:24px;background:linear-gradient(150deg,var(--emerald),var(--deep));color:var(--blush)}
+.quote p{font-family:var(--display);font-style:italic;font-size:clamp(19px,4vw,24px);line-height:1.5}
+.quote .s{font-family:var(--script);font-size:30px;color:var(--rose);margin-top:10px}
+.box{margin-top:26px;background:#fff;border:1px solid var(--blush2);border-radius:22px;padding:36px clamp(20px,5vw,42px);box-shadow:0 20px 50px rgba(20,65,58,.12)}
+.dl{text-align:center;font-size:14px;color:var(--soft);margin-bottom:24px}
+form{display:grid;gap:22px}
+.fld label{display:block;font-size:12.5px;letter-spacing:.06em;color:var(--soft);font-weight:500;margin-bottom:6px}
+.fld input[type=text],.fld input[type=tel],.fld input[type=number]{width:100%;padding:10px 2px;border:none;border-bottom:1.5px solid var(--rose);background:transparent;font:16px var(--body);color:var(--ink);outline:none}
+.fld input:focus{border-bottom-color:var(--emerald)}
+.rr{display:flex;gap:26px}.rr label{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--ink);letter-spacing:0}
+.rr input{accent-color:var(--emerald);width:17px;height:17px}
+#gf{display:block}#gf.hide{display:none}
+.sub{width:100%;padding:15px;border:none;border-radius:99px;background:linear-gradient(120deg,var(--emerald),var(--emerald2));color:#fff;font-weight:600;letter-spacing:.08em;font-size:14px;box-shadow:0 10px 24px rgba(20,65,58,.35);transition:transform .15s}
+.sub:hover{transform:translateY(-2px)}
+.sub:disabled{opacity:.6;cursor:wait;transform:none}
+#err{display:none;text-align:center;color:var(--rose-d);font-size:14px}#err.show{display:block}
+#ok{display:none;text-align:center}#ok.show{display:block}
+#ok h3{font-family:var(--display);color:var(--emerald);font-size:28px;margin-bottom:8px}#ok p{color:var(--soft)}
+footer{text-align:center;padding:50px 20px 60px;color:var(--soft);font-size:13.5px}
+footer .n{font-family:var(--script);font-size:32px;color:var(--emerald);display:block}
+:focus-visible{outline:2px solid var(--rose-d);outline-offset:2px}
 </style>
 </head>
 <body>
 
-<!-- ============ COVER ============ -->
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="mono" viewBox="0 0 120 120">
+<g class="ring" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 5" opacity=".7"><circle cx="60" cy="60" r="57"/></g>
+<circle cx="45" cy="60" r="30" fill="none" stroke="currentColor" stroke-width="1.6"/>
+<circle cx="75" cy="60" r="30" fill="none" stroke="currentColor" stroke-width="1.6"/>
+<text x="33" y="72" font-family="Great Vibes,cursive" font-size="40" fill="currentColor">S</text>
+<text x="71" y="72" font-family="Great Vibes,cursive" font-size="40" fill="currentColor">R</text>
+<path d="M60 20l3 5-3 5-3-5z" fill="currentColor"/>
+</symbol></defs></svg>
+
 <section id="cover">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <canvas id="fx"></canvas>
   <div class="cover-inner">
-    <div class="arch">
-      <svg class="cover-monogram" viewBox="-4 8 204 132">
-        <path d="M22,58 C6,52 5,32 21,25 C33,20 43,27 41,38 C39,47 29,49 26,42" fill="none" stroke="#E9CE97" stroke-width="2.1" stroke-linecap="round" opacity="0.9"/>
-        <path d="M178,92 C195,97 197,118 180,124 C167,129 158,122 160,111 C162,102 172,100 175,107" fill="none" stroke="#E9CE97" stroke-width="2.1" stroke-linecap="round" opacity="0.9"/>
-        <path d="M14,132 C64,150 138,150 187,128" fill="none" stroke="#E9CE97" stroke-width="1.3" stroke-linecap="round" opacity="0.75"/>
-        <text x="8" y="120" font-family="'Alex Brush', cursive" font-size="126" fill="#E9CE97">S</text>
-        <text x="86" y="120" font-family="'Alex Brush', cursive" font-size="126" fill="#E9CE97">R</text>
-        <path d="M100,66 C100,60 108,60 108,66 C108,60 116,60 116,66 C116,73 108,80 108,80 C108,80 100,73 100,66 Z" fill="#E9CE97"/>
-      </svg>
-      <p class="cover-eyebrow">Vous êtes chaleureusement invités à célébrer le</p>
-      <h1 class="cover-title">Fiançailles</h1>
-      <p class="cover-names">Sheina Braha <span class="amp">&amp;</span> Ruben Avraham</p>
-      <div class="cover-divider"></div>
-      <div class="cover-date">27 DÉCEMBRE 2026</div>
-      <a href="#details" class="cover-cta">Découvrir l'invitation</a>
+    <div class="glass">
+      <svg class="logo" style="color:#F3D9B1"><use href="#mono"/></svg>
+      <p class="eyebrow">Vous êtes chaleureusement invités aux</p>
+      <h1 class="big">Fiançailles</h1>
+      <p class="names">Sheina <i>&amp;</i> Ruben</p>
+      <div class="sep"></div>
+      <div class="date">27 FÉVRIER 2027</div>
+      <a href="#details" class="cta">Découvrir l'invitation</a>
     </div>
   </div>
-  <div class="scroll-hint">⌄</div>
 </section>
 
-<!-- ============ COUNTDOWN ============ -->
-<div class="countdown-wrap">
-  <div class="countdown-names">Sheina &amp; Ruben</div>
-  <div class="countdown-sub">Le compte à rebours a commencé</div>
-  <div class="countdown">
-    <div class="cd-box"><div class="cd-num" id="cd-days">00</div><div class="cd-label">JOURS</div></div>
-    <div class="cd-box"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">HEURES</div></div>
-    <div class="cd-box"><div class="cd-num" id="cd-mins">00</div><div class="cd-label">MIN</div></div>
-    <div class="cd-box"><div class="cd-num" id="cd-secs">00</div><div class="cd-label">SEC</div></div>
+<div class="cd-wrap">
+  <h3>Sheina &amp; Ruben</h3>
+  <p>Le compte à rebours a commencé</p>
+  <div class="cd">
+    <div><b id="d">00</b><span>JOURS</span></div><div><b id="h">00</b><span>HEURES</span></div>
+    <div><b id="m">00</b><span>MIN</span></div><div><b id="s">00</b><span>SEC</span></div>
   </div>
 </div>
 
 <div id="details" class="content">
-
-  <div class="couple">
-    <div class="person">
-      <span class="first">Sheina Braha</span>
-      <span class="last">Abecassis</span>
-    </div>
-    <div class="amp">&amp;</div>
-    <div class="person">
-      <span class="first">Ruben Avraham</span>
-      <span class="last">Isaac Mouly</span>
-    </div>
+  <div class="couple reveal">
+    <div><span class="f">Sheina</span><span class="l">ABECASSIS</span></div>
+    <div class="a">&amp;</div>
+    <div><span class="f">Ruben</span><span class="l">AVRAHAM ISAAC</span></div>
   </div>
-  <p class="invite-line">Nous serions honorés de votre présence</p>
+  <p class="line reveal">Nous serions honorés de votre présence</p>
 
-  <div class="section-head">
-    <p class="section-eyebrow">Dimanche</p>
-    <h2 class="section-title">27 Décembre 2026</h2>
+  <div class="head reveal"><p>Samedi soir</p><h2>27 Février 2027</h2></div>
+
+  <div class="tl">
+    <div class="ti reveal"><div class="tb">✦</div><div class="tt">Accueil des invités</div><div class="tm">19h00</div></div>
+    <div class="ti reveal"><div class="tb">♡</div><div class="tt">Cérémonie des fiançailles</div><div class="tm">20h00</div></div>
+    <div class="ti reveal"><div class="tb">✧</div><div class="tt">Dîner &amp; soirée</div><div class="tm">21h00</div></div>
   </div>
 
-  <div class="timeline">
-    <div class="t-item">
-      <div class="t-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="15" r="6"/><path d="M9 8l3-5 3 5"/><path d="M9.5 15a2.5 2.5 0 0 1 5 0"/></svg>
-      </div>
-      <div class="t-title">Accueil des invités</div>
-      <div class="t-time">19h00</div>
-    </div>
-    <div class="t-item">
-      <div class="t-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 3v6l-2 8a2 2 0 0 0 2 3h0a2 2 0 0 0 2-3l-2-8V3"/><path d="M16 3v6l2 8a2 2 0 0 1-2 3h0a2 2 0 0 1-2-3l2-8V3"/><path d="M6 3h4M14 3h4"/></svg>
-      </div>
-      <div class="t-title">Cérémonie des fiançailles</div>
-      <div class="t-time">20h00</div>
-    </div>
-    <div class="t-item">
-      <div class="t-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="9" cy="12" r="7"/><path d="M17 5v14M20 5v6a3 3 0 0 1-3 3"/></svg>
-      </div>
-      <div class="t-title">Dîner &amp; soirée</div>
-      <div class="t-time">21h00</div>
-    </div>
-  </div>
+  <div style="text-align:center" class="reveal"><button class="cal" onclick="addCal()">📅 Ajouter à mon calendrier</button></div>
+  <p class="loc reveal">📍 Le lieu exact vous sera communiqué ultérieurement.</p>
+  <p class="hope reveal">Nous avons hâte de partager ce moment unique avec vous !</p>
 
-  <div style="text-align:center;">
-    <button class="cal-btn" onclick="addToCalendar()">📅 Ajouter à mon calendrier</button>
-  </div>
-
-  <p class="location">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
-    <span>Le lieu exact vous sera communiqué ultérieurement.</span>
-  </p>
-
-  <p class="hope">Nous avons hâte de partager ce moment unique avec vous !</p>
-
-  <div class="divider">
-    <span class="line"></span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s-7-4.5-7-10a5 5 0 0 1 10 0 5 5 0 0 1 10 0c0 5.5-7 10-7 10s-3-1.5-3-1.5"/></svg>
-    <span class="line"></span>
-  </div>
-
-  <div class="quote">
+  <div class="quote reveal">
     <p>« Deux âmes, une promesse — le premier chapitre d'une longue et belle histoire. »</p>
-    <div class="attrib">Sheina &amp; Ruben</div>
+    <div class="s">Sheina &amp; Ruben</div>
   </div>
 
-  <section class="rsvp" id="rsvp">
-    <div class="section-head">
-      <p class="section-eyebrow">Merci de bien vouloir</p>
-      <h2 class="section-title">Vous inscrire</h2>
-    </div>
-
-    <div class="rsvp-box" style="margin-top:26px;">
-      <p class="deadline">Merci de confirmer votre présence avant le <strong>30 novembre 2026</strong>.</p>
-
-      <form class="rsvp" id="rsvpForm">
-        <div class="field">
-          <label for="name">Nom et prénom</label>
-          <input type="text" id="name" name="name" required autocomplete="name">
-        </div>
-
-        <div class="field">
-          <label for="phone">Téléphone</label>
-          <input type="tel" id="phone" name="phone" required autocomplete="tel">
-        </div>
-
-        <div class="field">
-          <label>Serez-vous des nôtres ?</label>
-          <div class="radio-row">
-            <label class="radio-opt"><input type="radio" name="attending" value="oui" checked> Présent</label>
-            <label class="radio-opt"><input type="radio" name="attending" value="non"> Absent</label>
-          </div>
-        </div>
-
-        <div class="field guests-field show" id="guestsField">
-          <label for="guests">Nombre de personnes</label>
-          <input type="number" id="guests" name="guests" min="1" max="12" value="1">
-        </div>
-
-        <button type="submit" class="submit-btn">Confirmer ma venue</button>
+  <section id="rsvp" style="padding-bottom:60px">
+    <div class="head reveal"><p>Merci de bien vouloir</p><h2>Vous inscrire</h2></div>
+    <div class="box reveal">
+      <p class="dl">Merci de confirmer votre présence avant le <strong>31 janvier 2027</strong>.</p>
+      <form id="f">
+        <div class="fld"><label for="n">Nom et prénom</label><input type="text" id="n" required autocomplete="name"></div>
+        <div class="fld"><label for="p">Téléphone</label><input type="tel" id="p" required autocomplete="tel"></div>
+        <div class="fld"><label>Serez-vous des nôtres ?</label>
+          <div class="rr"><label><input type="radio" name="a" value="oui" checked> Présent</label><label><input type="radio" name="a" value="non"> Absent</label></div></div>
+        <div class="fld" id="gf"><label for="g">Nombre de personnes</label><input type="number" id="g" min="1" max="12" value="1"></div>
+        <button class="sub" type="submit" id="btn">Confirmer ma venue</button>
+        <p id="err">Une erreur est survenue. Vérifiez votre connexion et réessayez.</p>
       </form>
-
-      <div class="confirm" id="confirmMsg">
-        <h3 id="confirmTitle">Merci infiniment !</h3>
-        <p id="confirmText">Votre réponse a bien été enregistrée. Nous avons hâte de célébrer ce moment avec vous.</p>
-      </div>
+      <div id="ok"><h3 id="ot"></h3><p id="op"></p></div>
     </div>
   </section>
 </div>
 
 <footer>
-  <svg class="logo-mark" viewBox="-4 8 204 132">
-    <path d="M22,58 C6,52 5,32 21,25 C33,20 43,27 41,38 C39,47 29,49 26,42" fill="none" stroke="#8A6A3E" stroke-width="2.1" stroke-linecap="round" opacity="0.9"/>
-    <path d="M178,92 C195,97 197,118 180,124 C167,129 158,122 160,111 C162,102 172,100 175,107" fill="none" stroke="#8A6A3E" stroke-width="2.1" stroke-linecap="round" opacity="0.9"/>
-    <path d="M14,132 C64,150 138,150 187,128" fill="none" stroke="#8A6A3E" stroke-width="1.3" stroke-linecap="round" opacity="0.75"/>
-    <text x="8" y="120" font-family="'Alex Brush', cursive" font-size="126" fill="#8A6A3E">S</text>
-    <text x="86" y="120" font-family="'Alex Brush', cursive" font-size="126" fill="#8A6A3E">R</text>
-    <path d="M100,66 C100,60 108,60 108,66 C108,60 116,60 116,66 C116,73 108,80 108,80 C108,80 100,73 100,66 Z" fill="#8A6A3E"/>
-  </svg>
-  <span class="names">Sheina &amp; Ruben</span>
-  27 décembre 2026 · avec toute notre gratitude
+  <svg width="90" height="90" style="color:#14413A"><use href="#mono"/></svg>
+  <span class="n">Sheina &amp; Ruben</span>
+  27 février 2027 · avec toute notre gratitude
 </footer>
 
 <script>
-  // guests field toggle
-  const radios = document.querySelectorAll('input[name="attending"]');
-  const guestsField = document.getElementById('guestsField');
-  radios.forEach(r => {
-    r.addEventListener('change', () => {
-      if (r.value === 'oui' && r.checked) guestsField.classList.add('show');
-      if (r.value === 'non' && r.checked) guestsField.classList.remove('show');
+// ============================================================
+//  GOOGLE SHEETS — collez ici l'URL de votre application web
+//  Apps Script (Déployer → Application web → URL en /exec)
+// ============================================================
+const SHEET_URL = "COLLEZ_ICI_VOTRE_URL_APPS_SCRIPT/exec";
+
+// RSVP
+const gf=document.getElementById('gf');
+document.querySelectorAll('input[name=a]').forEach(r=>r.addEventListener('change',()=>gf.classList.toggle('hide',r.value==='non'&&r.checked)));
+
+document.getElementById('f').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const form=e.target, btn=document.getElementById('btn'), err=document.getElementById('err');
+  const nom=document.getElementById('n').value.trim();
+  const tel=document.getElementById('p').value.trim();
+  const yes=document.querySelector('input[name=a]:checked').value==='oui';
+  const nb=yes?(parseInt(document.getElementById('g').value,10)||1):0;
+  const first=nom.split(' ')[0]||'';
+
+  err.classList.remove('show');
+  btn.disabled=true; btn.textContent='Envoi en cours…';
+
+  try{
+    await fetch(SHEET_URL,{
+      method:'POST',
+      mode:'no-cors',
+      body:JSON.stringify({nom:nom,telephone:tel,presence:yes?'Présent':'Absent',nombre:nb})
     });
-  });
-
-  // form submit
-  const form = document.getElementById('rsvpForm');
-  const confirmMsg = document.getElementById('confirmMsg');
-  const confirmTitle = document.getElementById('confirmTitle');
-  const confirmText = document.getElementById('confirmText');
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const attending = document.querySelector('input[name="attending"]:checked').value;
-
-    if (attending === 'oui') {
-      confirmTitle.textContent = 'Merci infiniment, ' + (name.split(' ')[0] || '') + ' !';
-      confirmText.textContent = 'Votre présence a bien été confirmée. Nous avons hâte de célébrer ce moment unique avec vous le 27 décembre 2026.';
-    } else {
-      confirmTitle.textContent = 'Merci de nous avoir prévenus';
-      confirmText.textContent = 'Nous sommes tristes de ne pas vous compter parmi nous, mais nous penserons fort à vous ce jour-là.';
-    }
-
-    form.style.display = 'none';
-    confirmMsg.classList.add('show');
-  });
-
-  // countdown to 27 Dec 2026, 19:00 Paris time
-  const target = new Date('2026-12-27T19:00:00+01:00').getTime();
-  function updateCountdown(){
-    const now = new Date().getTime();
-    let diff = target - now;
-    if (diff < 0) diff = 0;
-    const days = Math.floor(diff / (1000*60*60*24));
-    const hours = Math.floor((diff / (1000*60*60)) % 24);
-    const mins = Math.floor((diff / (1000*60)) % 60);
-    const secs = Math.floor((diff / 1000) % 60);
-    document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
-    document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
-    document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
-    document.getElementById('cd-secs').textContent = String(secs).padStart(2,'0');
+  }catch(_){
+    btn.disabled=false; btn.textContent='Confirmer ma venue'; err.classList.add('show');
+    return;
   }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
 
-  // add to calendar (.ics download)
-  function addToCalendar(){
-    const ics = [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'PRODID:-//Sheina Ruben Fiancailles//FR',
-      'BEGIN:VEVENT',
-      'UID:' + Date.now() + '@sheina-ruben.fr',
-      'DTSTAMP:20261227T190000',
-      'DTSTART:20261227T190000',
-      'DTEND:20261228T000000',
-      'SUMMARY:Fiançailles de Sheina & Ruben',
-      'DESCRIPTION:Accueil 19h · Cérémonie 20h · Dîner 21h',
-      'END:VEVENT',
-      'END:VCALENDAR'
-    ].join('\r\n');
-    const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Fiancailles_Sheina_Ruben.ics';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }
+  document.getElementById('ot').textContent=yes?'Merci infiniment, '+first+' !':'Merci de nous avoir prévenus';
+  document.getElementById('op').textContent=yes?'Votre présence est confirmée. Nous avons hâte de célébrer avec vous le 27 février 2027.':'Nous sommes tristes de ne pas vous compter parmi nous, mais nous penserons fort à vous.';
+  form.style.display='none';document.getElementById('ok').classList.add('show');
+});
+
+// Countdown (27 fév 2027, 19h, heure de Paris = UTC+1)
+const T=new Date('2027-02-27T19:00:00+01:00').getTime();
+function tick(){let x=Math.max(0,T-Date.now());const v=[Math.floor(x/864e5),Math.floor(x/36e5)%24,Math.floor(x/6e4)%60,Math.floor(x/1e3)%60];
+['d','h','m','s'].forEach((k,i)=>document.getElementById(k).textContent=String(v[i]).padStart(2,'0'));}
+tick();setInterval(tick,1000);
+
+// Calendrier
+function addCal(){
+  const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Fiancailles//FR','BEGIN:VEVENT','UID:'+Date.now()+'@sheina-ruben','DTSTAMP:20270101T000000Z','DTSTART;TZID=Europe/Paris:20270227T190000','DTEND;TZID=Europe/Paris:20270228T000000','SUMMARY:Fiançailles de Sheina & Ruben','DESCRIPTION:Accueil 19h · Cérémonie 20h · Dîner 21h','END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='Fiancailles_Sheina_Ruben.ics';document.body.appendChild(a);a.click();a.remove();
+}
+
+// Apparition au scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Pétales & étincelles
+(function(){const c=document.getElementById('fx'),x=c.getContext('2d');let W,H,P=[];
+function rs(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight}rs();addEventListener('resize',rs);
+const col=['231,169,155','243,217,177','255,255,255'];
+for(let i=0;i<46;i++)P.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*3+1,v:Math.random()*.6+.25,s:Math.random()*Math.PI*2,c:col[i%3],a:Math.random()*.5+.3});
+(function f(){x.clearRect(0,0,W,H);P.forEach(p=>{p.y+=p.v;p.s+=.02;p.x+=Math.sin(p.s)*.5;if(p.y>H+10){p.y=-10;p.x=Math.random()*W}
+x.save();x.translate(p.x,p.y);x.rotate(p.s);x.fillStyle='rgba('+p.c+','+p.a+')';x.beginPath();x.ellipse(0,0,p.r*1.6,p.r,0,0,7);x.fill();x.restore()});requestAnimationFrame(f)})();})();
 </script>
-
 </body>
 </html>
